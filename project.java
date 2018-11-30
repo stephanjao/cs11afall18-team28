@@ -11,6 +11,9 @@ public class project{
   public static String[] genre = new String[ROWS];
   public static String[] publisher = new String[ROWS];
   public static int[] result = new int[ROWS];
+  ///werwqtrewrtqert
+
+  //dsfasdfas
 
   public static void main(String[] args){
     readStaticData();
