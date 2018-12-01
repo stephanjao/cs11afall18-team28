@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.io.File;
+import java.util.Arrays;
 
 public class project{
 
@@ -11,16 +12,10 @@ public class project{
   public static String[] genre = new String[ROWS];
   public static String[] publisher = new String[ROWS];
   public static int[] result = new int[ROWS];
-  ///werwqtrewrtqert
-
-  //dsfasdfas
 
   public static void main(String[] args){
     readStaticData();
-    yearSearch();
-    nameSearch();
-    platformSearch();
-    genreSearch();
+    toSearch();
   }
 
   public static void readStaticData(){
@@ -55,58 +50,136 @@ public class project{
     }
   }
 
-  public static int[] yearSearch(){
-    int[] temp = result;
+  public static void toSearch(){
+    boolean goSearch = true;
+    System.out.println("Which search do you want? (name, year, platform, genre)");
+    System.out.println("Enter 0 to quit");
+    while (goSearch){
+      String searchkind = TextIO.getln();
+      switch (searchkind){
+        case "name": nameSearch(); break;
+        case "year": yearSearch(); break;
+        case "platform": platformSearch(); break;
+        case "genre": genreSearch(); break;
+        case "0": System.out.println("Thanks for using"); return;
+        default: System.out.println("I can't recognize "+searchkind);
+      }
+      System.out.println("Want further search? (name, year, platform, genre)");
+      System.out.println("Enter 0 to quit");
+    }
+  }
+
+  public static void yearSearch(){
+    int[] temp = result.clone();
     try {
-      result = null;
-      System.out.print("Start year(inclusive): ");
-      String startYear = TextIO.getln();
-      System.out.print("End year(inclusive): ");
-      String endYear = TextIO.getln();
-      for (int i=0; i<temp.length; i++){
-        if (year[i].compareTo(startYear)>=0 && year[i].compareTo(endYear)<=0){
-        System.out.printf("%-40s %-8s %-8s %-8s %-8s%n",name[i],platform[i],year[i],genre[i],publisher[i]);
+      Arrays.fill(result,-1);
+      System.out.print("Startyear(inclusive): ");
+      String startyear = TextIO.getln();
+      System.out.print("Endyear(inclusive): ");
+      String endyear = TextIO.getln();
+      int i = 0;
+      int j = 0;
+      while(true){
+        if (i<temp.length && temp[i]!=-1){
+          if(year[temp[i]].compareTo(startyear)>=0 && year[temp[i]].compareTo(endyear)<=0){
+            result[j++] = temp[i];
+          }
+          i++;
+        } else {
+          break;
         }
       }
+      printResult();
     } catch (NullPointerException e){
         System.out.println();
     }
-    return temp;
   }
 
   public static void nameSearch(){
+    int[] temp = result.clone();
     try {
+      Arrays.fill(result,-1);
       System.out.print("Name: ");
       String name1 = TextIO.getln();
-      for (int i=0; i<ROWS; i++){
-        if ((name[i].toLowerCase()).indexOf(name1.toLowerCase())!=-1){
-          System.out.printf("%-40s %-8s %-8s %-8s %-8s%n",name[i],platform[i],year[i],genre[i],publisher[i]);
+      int i = 0;
+      int j = 0;
+      while(true){
+        if (i<temp.length && temp[i]!=-1){
+          if((name[temp[i]].toLowerCase()).indexOf(name1.toLowerCase())!=-1){
+            result[j++] = temp[i];
+          }
+          i++;
+        } else {
+          break;
         }
       }
+      printResult();
     } catch (NullPointerException e){
         System.out.println();
     }
-
   }
 
   public static void platformSearch(){
-    System.out.print("Platform: ");
-    String platform1 = TextIO.getln();
-    for (int i=0; i<ROWS; i++){
-      if (platform1.equals(platform[i])){
-        System.out.printf("%-40s %-8s %-8s %-8s%n",name[i],platform[i],year[i],genre[i]);
+    int[] temp = result.clone();
+    try {
+      Arrays.fill(result,-1);
+      System.out.print("Platform: ");
+      String platform1 = TextIO.getln();
+      int i = 0;
+      int j = 0;
+      while(true){
+        if (i<temp.length && temp[i]!=-1){
+          if((platform[temp[i]].toLowerCase()).indexOf(platform1.toLowerCase())!=-1){
+            result[j++] = temp[i];
+          }
+          i++;
+        } else {
+          break;
+        }
       }
+      printResult();
+    } catch (NullPointerException e){
+        System.out.println();
     }
   }
 
   public static void genreSearch(){
-    System.out.print("Genre: ");
-    String genre1 = TextIO.getln();
-    for (int i=0; i<ROWS; i++){
-      if (genre1.equals(genre[i])){
-        System.out.printf("%-40s %-8s %-8s %-8s%n",name[i],platform[i],year[i],genre[i]);
+    int[] temp = result.clone();
+    try {
+      Arrays.fill(result,-1);
+      System.out.print("Genre: ");
+      String genre1 = TextIO.getln();
+      int i = 0;
+      int j = 0;
+      while(true){
+        if (i<temp.length && temp[i]!=-1){
+          if((genre[temp[i]].toLowerCase()).indexOf(genre1.toLowerCase())!=-1){
+            result[j++] = temp[i];
+          }
+          i++;
+        } else {
+          break;
+        }
       }
+      printResult();
+    } catch (NullPointerException e){
+        System.out.println();
     }
   }
 
+  public static void printResult(){
+    int i = 0;
+    try {
+      while(true){
+        if(i<result.length && result[i]!=-1){
+          System.out.printf("%-40s %-8s %-8s %-8s%n",name[result[i]],platform[result[i]],year[result[i]],genre[result[i]]);
+          i++;
+        } else {
+          break;
+        }
+      }
+    } catch (NullPointerException e){
+    }
+    System.out.println();
+  }
 }
