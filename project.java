@@ -74,9 +74,10 @@ public class project{
     int[] temp = result.clone();
     try {
       Arrays.fill(result,-1);
-      System.out.print("Startyear(inclusive): ");
+      System.out.println("Database contains games between 1980 and 2017");
+      System.out.print("Start year(inclusive): ");
       String startyear = TextIO.getln();
-      System.out.print("Endyear(inclusive): ");
+      System.out.print("End year(inclusive): ");
       String endyear = TextIO.getln();
       int i = 0;
       int j = 0;
