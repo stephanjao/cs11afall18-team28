@@ -128,6 +128,7 @@ public class project{
     int[] temp = result.clone();
     try {
       Arrays.fill(result,-1);
+      System.out.print("Database contains games on the following platforms: 2600, 3DS, DC, DS, GB, GBA, GC, GEN, N64, NES, NG, PC, PCFX, PS, PS2, PS3, PS4, PSP, PSV, SAT, SNES, Wii, WiiU, XB, XOne");
       System.out.print("Platform: ");
       String platform1 = TextIO.getln();
       int i = 0;
@@ -152,6 +153,7 @@ public class project{
     int[] temp = result.clone();
     try {
       Arrays.fill(result,-1);
+      System.out.print("Database contains games with the following genres: Adventure, Fighting, Misc, Platform, Puzzle, Racing, Role-Playing, Shooter, Simulation, Sports, Strategy");
       System.out.print("Genre: ");
       String genre1 = TextIO.getln();
       int i = 0;
