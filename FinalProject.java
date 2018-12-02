@@ -96,6 +96,7 @@ public class FinalProject{
   }
 
   public static void genreSearch(){
+    System.out.print("Adventure, Fighting, Misc, Platform, Puzzle, Racing, Role-Playing, Shooter, Simulation, Sports, Strategy");
     System.out.print("Genre: ");
     String genre1 = TextIO.getln();
     currGenre = genre1;
