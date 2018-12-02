@@ -14,6 +14,7 @@ public class project{
   public static int[] result = new int[ROWS];
 
   public static void main(String[] args){
+    System.out.println("This program allows you to search for video games from a database using name, year, platform, and genre");
     readStaticData();
     toSearch();
   }
