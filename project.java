@@ -1,3 +1,10 @@
+/**
+  * This class implements a simple program that will search a database of video games and ask the user for parameter inputs.
+
+
+  Written by 
+  */
+
 import java.util.Scanner;
 import java.io.File;
 import java.util.Arrays;
