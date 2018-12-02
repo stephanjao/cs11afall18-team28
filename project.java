@@ -60,7 +60,7 @@ public class project{
 
   public static void toSearch(){
     boolean goSearch = true;
-    System.out.println("Which search do you want? (name, year, platform, genre)");
+    System.out.println("Which search do you want? (Please type name, year, platform, or genre)");
     System.out.println("Enter 0 to quit");
     while (goSearch){
       String searchkind = TextIO.getln();
