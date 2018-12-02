@@ -79,6 +79,9 @@ public class project{
       String startyear = TextIO.getln();
       System.out.print("End year(inclusive): ");
       String endyear = TextIO.getln();
+      if(Integer.parseInt(startyear) > Integer.parseInt(endyear)) {
+        System.out.println("Error");
+      }
       int i = 0;
       int j = 0;
       while(true){
