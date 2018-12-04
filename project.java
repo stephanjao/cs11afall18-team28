@@ -210,7 +210,7 @@ public class project{
     try {
       while(true){
         if(i<result.length && result[i]!=-1){
-          System.out.printf("%-110s %-15s %-15s %-15s %-15s%n",name[result[i]],platform[result[i]],year[result[i]],genre[result[i]],publisher[result[i]]);
+          System.out.printf("%-100s %-15s %-15s %-15s %-15s%n",name[result[i]],platform[result[i]],year[result[i]],genre[result[i]],publisher[result[i]]);
           i++;
         } else {
           break;
