@@ -7,6 +7,7 @@
 import java.util.Scanner;
 import java.io.File;
 import java.util.Arrays;
+import java.io.PrintWriter;
 
 public class project{
 
@@ -217,6 +218,24 @@ public class project{
         }
       }
     } catch (NullPointerException e){
+    }
+    System.out.println();
+  }
+
+   public static void printFile(){
+    int i = 0;
+    try {
+      PrintWriter writer = new PrintWriter("the-file-name.txt", "UTF-8");
+      while(true){
+        if(i<result.length && result[i]!=-1){
+          System.out.printf("%-110s %-15s %-15s %-15s %-15s%n",name[result[i]],platform[result[i]],year[result[i]],genre[result[i]],publisher[result[i]]);
+          i++;
+        } else {
+          break;
+        }
+      }
+    } catch (Exception e){
+      System.out.println("Error to creat file: " +e);
     }
     System.out.println();
   }
