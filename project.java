@@ -81,9 +81,9 @@ public class project{
     try {
       Arrays.fill(result,-1);
       System.out.println("Database contains games between 1980 and 2017");
-      System.out.print("Start year(inclusive): ");
+      System.out.println("Start year(inclusive): ");
       String startyear = TextIO.getln();
-      System.out.print("End year(inclusive): ");
+      System.out.println("End year(inclusive): ");
       String endyear = TextIO.getln();
       if(Integer.parseInt(startyear) > Integer.parseInt(endyear)) {
         System.out.println("Error");
@@ -159,8 +159,8 @@ public class project{
     int[] temp = result.clone();
     try {
       Arrays.fill(result,-1);
-      System.out.print("Database contains games with the following genres: Adventure, Fighting, Misc, Platform, Puzzle, Racing, Role-Playing, Shooter, Simulation, Sports, Strategy");
-      System.out.print("Genre: ");
+      System.out.println("Database contains games with the following genres: Adventure, Fighting, Misc, Platform, Puzzle, Racing, Role-Playing, Shooter, Simulation, Sports, Strategy");
+      System.out.println("Genre: ");
       String genre1 = TextIO.getln();
       int i = 0;
       int j = 0;
@@ -184,7 +184,7 @@ public class project{
     int[] temp = result.clone();
     try {
       Arrays.fill(result,-1);
-      System.out.print("Publisher: ");
+      System.out.println("Publisher: ");
       String publisher1 = TextIO.getln();
       int i = 0;
       int j = 0;
