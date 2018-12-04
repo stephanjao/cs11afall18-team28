@@ -67,6 +67,7 @@ public class project{
         case "year": yearSearch(); break;
         case "platform": platformSearch(); break;
         case "genre": genreSearch(); break;
+        case "publisher": publisherSearch(); break;
         case "0": System.out.println("Thanks for using"); return;
         default: System.out.println("I can't recognize "+searchkind);
       }
@@ -179,7 +180,7 @@ public class project{
     }
   }
 
-  public static void pulisherSearch(){
+  public static void publisherSearch(){
     int[] temp = result.clone();
     try {
       Arrays.fill(result,-1);
@@ -202,32 +203,6 @@ public class project{
         System.out.println();
     }
   }
-
-
-  public static void pulisherSearch(){
-    int[] temp = result.clone();
-    try {
-      Arrays.fill(result,-1);
-      System.out.print("Publisher: ");
-      String publisher1 = TextIO.getln();
-      int i = 0;
-      int j = 0;
-      while(true){
-        if (i<temp.length && temp[i]!=-1){
-          if((publisher[temp[i]].toLowerCase()).indexOf(publisher1.toLowerCase())!=-1){
-            result[j++] = temp[i];
-          }
-          i++;
-        } else {
-          break;
-        }
-      }
-      printResult();
-    } catch (NullPointerException e){
-        System.out.println();
-    }
-  }
-
 
   public static void printResult(){
     int i = 0;
