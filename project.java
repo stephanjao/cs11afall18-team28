@@ -1,6 +1,7 @@
 /**
-  * This class implements a simple program that will search a database of video games and ask the user for parameter inputs.
-  Written by
+  * This class implements a program that will search a database of video games and ask the user for parameter inputs.
+  * Written by Yiccheng Tao, Stephan Jao, and Kayla Shepherd
+  * December 6, 2018
   */
 
 import java.util.Scanner;
@@ -110,7 +111,7 @@ public class project{
     int[] temp = result.clone();
     try {
       Arrays.fill(result,-1);
-      System.out.print("Name: ");
+      System.out.println("Name: ");
       String name1 = TextIO.getln();
       int i = 0;
       int j = 0;
@@ -134,8 +135,8 @@ public class project{
     int[] temp = result.clone();
     try {
       Arrays.fill(result,-1);
-      System.out.print("Database contains games on the following platforms: 2600, 3DS, DC, DS, GB, GBA, GC, GEN, N64, NES, NG, PC, PCFX, PS, PS2, PS3, PS4, PSP, PSV, SAT, SNES, Wii, WiiU, XB, XOne");
-      System.out.print("Platform: ");
+      System.out.println("Database contains games on the following platforms: 2600, 3DS, DC, DS, GB, GBA, GC, GEN, N64, NES, NG, PC, PCFX, PS, PS2, PS3, PS4, PSP, PSV, SAT, SNES, Wii, WiiU, XB, XOne");
+      System.out.println("Platform: ");
       String platform1 = TextIO.getln();
       int i = 0;
       int j = 0;
