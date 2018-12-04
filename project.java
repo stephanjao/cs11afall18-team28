@@ -142,7 +142,7 @@ public class project{
       int j = 0;
       while(true){
         if (i<temp.length && temp[i]!=-1){
-          if((platform[temp[i]].toLowerCase()).indexOf(platform1.toLowerCase())!=-1){
+          if((platform[temp[i]].toLowerCase()).equals(platform1.toLowerCase())){
             result[j++] = temp[i];
           }
           i++;
