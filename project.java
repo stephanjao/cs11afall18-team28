@@ -204,6 +204,31 @@ public class project{
   }
 
 
+  public static void pulisherSearch(){
+    int[] temp = result.clone();
+    try {
+      Arrays.fill(result,-1);
+      System.out.print("Publisher: ");
+      String publisher1 = TextIO.getln();
+      int i = 0;
+      int j = 0;
+      while(true){
+        if (i<temp.length && temp[i]!=-1){
+          if((publisher[temp[i]].toLowerCase()).indexOf(publisher1.toLowerCase())!=-1){
+            result[j++] = temp[i];
+          }
+          i++;
+        } else {
+          break;
+        }
+      }
+      printResult();
+    } catch (NullPointerException e){
+        System.out.println();
+    }
+  }
+
+
   public static void printResult(){
     int i = 0;
     try {

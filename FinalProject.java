@@ -85,6 +85,7 @@ public class FinalProject{
   }
 
   public static void platformSearch(){
+    System.out.print("2600, 3DS, DC, DS, GB, GBA, GC, GEN, N64, NES, NG, PC, PCFX, PS, PS2, PS3, PS4, PSP, PSV, SAT, SNES, Wii, WiiU, XB, XOne")
     System.out.print("Platform: ");
     String platform1 = TextIO.getln();
     currPlatform = platform1;
@@ -96,6 +97,7 @@ public class FinalProject{
   }
 
   public static void genreSearch(){
+    System.out.print("Adventure, Fighting, Misc, Platform, Puzzle, Racing, Role-Playing, Shooter, Simulation, Sports, Strategy");
     System.out.print("Genre: ");
     String genre1 = TextIO.getln();
     currGenre = genre1;
