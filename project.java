@@ -224,21 +224,27 @@ public class project{
     System.out.println();
   }
 
-   public static void printFile(){
+  public static void printFile(){
     int i = 0;
     try {
-      PrintWriter writer = new PrintWriter("the-file-name.txt", "UTF-8");
-      while(true){
-        if(i<result.length && result[i]!=-1){
-          System.out.printf("%-110s %-15s %-15s %-15s %-15s%n",name[result[i]],platform[result[i]],year[result[i]],genre[result[i]],publisher[result[i]]);
-          i++;
-        } else {
-          break;
+      System.out.println("Do you want to put the data into a .txt file?");
+      String pfile = TextIO.getln();
+      if (pfile.equals("yes")){
+        System.out.println("Filename: ");
+        String filename = TextIO.getln();
+        PrintWriter writer = new PrintWriter(filename, "UTF-8");
+        while(true){
+          if(i<result.length && result[i]!=-1){
+            writer.printf("%-110s %-15s %-15s %-15s %-15s%n",name[result[i]],platform[result[i]],year[result[i]],genre[result[i]],publisher[result[i]]);
+            i++;
+          } else {
+            break;
+          }
         }
+        writer.close();
       }
     } catch (Exception e){
       System.out.println("Error to creat file: " +e);
     }
-    System.out.println();
   }
 }
