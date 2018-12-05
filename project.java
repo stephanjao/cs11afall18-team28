@@ -9,7 +9,7 @@ import java.io.File;
 import java.util.Arrays;
 import java.io.PrintWriter;
 
-public class project{
+public class Testing{
 
   public static final String FILENAME="Video_Games_Sales_as_at_22_Dec_2016.csv";
   public static int ROWS = 16719;
@@ -24,6 +24,7 @@ public class project{
     System.out.println("This program allows you to search for video games from a database using name, year, platform, genre, and publisher");
     readStaticData();
     toSearch();
+    printFile();
   }
 
   public static void readStaticData(){
@@ -209,15 +210,18 @@ public class project{
   public static void printResult(){
     int i = 0;
     try {
+      int count = 0;
       while(true){
         if(i<result.length && result[i]!=-1){
-          System.out.printf("%-100s %-15s %-15s %-15s %-15s%n",name[result[i]],platform[result[i]],year[result[i]],genre[result[i]],publisher[result[i]]);
+          System.out.printf("%-110s %-15s %-15s %-15s %-15s%n",name[result[i]],platform[result[i]],year[result[i]],genre[result[i]],publisher[result[i]]);
           i++;
-        } else
-          System.out.println("No results");
-          {
+          count++;
+        } else {
           break;
         }
+      }
+      if(count == 0) {
+        System.out.println("No results");
       }
     } catch (NullPointerException e){
     }
@@ -227,7 +231,7 @@ public class project{
   public static void printFile(){
     int i = 0;
     try {
-      System.out.println("Do you want to put the data into a .txt file?");
+      System.out.println("Do you want to put the data into a .txt file? (yes or no)");
       String pfile = TextIO.getln();
       if (pfile.equals("yes")){
         System.out.println("Filename: ");
